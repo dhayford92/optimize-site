@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="blog-details spad" style="padding: 5rem 0;">
+        <div class="container">
+            <div class="heading_container">
+                <h2>
+                  Project: {{project.title }}
+                </h2>
+            </div><br><br>
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="blog__sidebar">
+                        <div class="blog__sidebar__item">
+                            <div class="section-title">
+                                <h4>Categories</h4>
+                            </div>
+                            <ul>
+                              {% for cat in project.field.all %}
+                                <a href="{% url 'category' project.title %}"><li><span class="badge badge-primary">{{ cat.title }}</span></li></a>
+                              {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <div class="blog__details__content">
+                        <div class="blog__details__item">
+                          {% for img in project.projectimage_set.all %}
+                            {% if img.featured %}
+                              <img src="{{ img.image.url }}" alt="" class="img-fluid" width="100%">
+                            {% endif %}
+                          {% endfor %}
+                            <div class="blog__details__item__title">
+                                <h4>{{ project.title }}</h4>
+                                <ul>
+                                    <li>Date: {{ project.created_on.date }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="blog__details__quote">
+                            <div class="col-sm-12 text-center">
+                              <div class="row">
+                                {% for img in project.projectimage_set.all %}
+                                  {% if img.featured == False %}
+                                    <div class="col-sm"><img src="{{ img.image.url }}" width="200" height="200"></div>
+                                  {% endif %}
+                                {% endfor %}
+                              </div>
+                            </div>
+                        </div>
+                        <div class="blog__details__desc">
+                            <p>{{ project.description|linebreaks }}</p>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

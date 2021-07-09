@@ -1,0 +1,244 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <!--home section-->
+    <section id="home" class="home">
+        <br>
+        <div class="container"> 
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="text-2"> Your Ideas are the orange of our eyes.</h1>
+                    <p class="text-3 text-muted"> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, architecto! Voluptatibus tempore
+                        ab quam natus aliquid esse quos explicabo qulkgh'drigha'ioeribusdam rem commodi sit architecto, obcaecati dolores nesciunt
+                        at maiores. Expedita!</p>
+                    <a href="#form">Hire Us</a>
+                    <br>
+                </div>
+                <div class="col-md-4">
+                    <img src="{% static 'images/Portfolio-1.jpg' %}" alt="" class="img-fluid img-home">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="services">
+        <div class="container">
+            <h1>Our Services</h1>
+            <div class="row services">
+                <div class="col-md-3 text-center">
+                    <div class="icon"><i class="fas fa-desktop"></i></div> 
+                    <h3>Web Developement</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas id, dolorum quo corporis doloribus quaerat. Excepturi, reiciendis quis quisquam saepe.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="icon"><i class="fas fa-tablet-alt"></i></div>
+                    <h3>App Developement</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas id, dolorum quo corporis doloribus quaerat. Excepturi, reiciendis quis quisquam saepe.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="icon"><i class="fas fa-paint-brush"></i></div>
+                    <h3>Ui/UX</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas id, dolorum quo corporis doloribus quaerat. Excepturi, reiciendis quis quisquam saepe.</p>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Cyber Security</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas id, dolorum quo corporis doloribus quaerat. Excepturi, reiciendis quis quisquam saepe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--About section-->
+    <section class="about" id="about">
+        <h2 class="title">About Us</h2>
+            <div class="container">
+                <!--first row ie web dev -->
+                <div class="row">
+                    <div class="col-md-6">
+                    <img src="{% static 'images/web-development.svg' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                    <h1 class="text-1">Web Development</h1>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima ratione impedit sed dolorem, veniam error saepe cumque. At quam sint, officiis iure nobis quia voluptatum assumenda. Repudiandae provident ullam voluptates illum perspiciatis, ad! Repellat iure debitis, expedita. Soluta inventore amet architecto, perferendis molestiae placeat ex molestias praesentium quo vitae ea.</p>
+                    </div>
+                </div>
+<br>
+<br>
+<br>
+                <!-- second row app dev -->
+                <div class="row">
+                    <div class="col-md-6">
+                    <h1 class="text-1">Mobile App Development</h1>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima ratione impedit sed dolorem, veniam error saepe cumque. At quam sint, officiis iure nobis quia voluptatum assumenda. Repudiandae provident ullam voluptates illum perspiciatis, ad! Repellat iure debitis, expedita. Soluta inventore amet architecto, perferendis molestiae placeat ex molestias praesentium quo vitae ea.</p>
+                    </div>
+                    <div class="col-md-6">
+
+                    <img src="{% static 'images/mobile-development.svg' %}" alt="" class="img-fluid">                      
+                </div>
+                </div>
+<br>
+<br>
+<br>
+                <!-- Third row Ui/Ux dev -->
+                <div class="row">
+                    <div class="col-md-6">
+                    <img src="{% static 'images/design.svg' %}" alt="" class="img-fluid">
+                    </div>
+                    <div class="col-md-6">
+                    <h1 class="text-1">User interface and experience</h1>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima ratione impedit sed dolorem, veniam error saepe cumque. At quam sint, officiis iure nobis quia voluptatum assumenda. Repudiandae provident ullam voluptates illum perspiciatis, ad! Repellat iure debitis, expedita. Soluta inventore amet architecto, perferendis molestiae placeat ex molestias praesentium quo vitae ea.</p>
+                    </div>
+                </div>
+
+                <br>
+<br>
+<br>
+                <!-- Last row Social Media Brand Influencers -->
+                <div class="row">
+                    <div class="col-md-6">
+                    <h1 class="text-1">Cyber Security</h1>
+                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima ratione impedit sed dolorem, veniam error saepe cumque. At quam sint, officiis iure nobis quia voluptatum assumenda. Repudiandae provident ullam voluptates illum perspiciatis, ad! Repellat iure debitis, expedita. Soluta inventore amet architecto, perferendis molestiae placeat ex molestias praesentium quo vitae ea.</p>
+                    </div>
+                    <div class="col-md-6">
+
+                    <img src="{% static 'images/social_media.svg' %}" alt="" class="img-fluid">                      
+                </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="works" class="works">
+        <h2 class="title">Some Of Our Works</h2>
+            <br>
+        <div class="container">
+            <div class="row">
+                {% for post in projects|slice:'6' %}
+                <div class="col-md-4 col-xs-6">
+                    <div class="portfolio-item">
+                        {% for img in post.projectimage_set.all %}
+                            {% if img.featured %}
+                                <img src="{{ img.image.url }}" class="img-res" alt="">
+                            {% endif %}
+                        {% endfor %}
+                        <div class="portfolio-item-info">
+                            <h4>{{ post.title }}</h4>
+                            <a href="{% url 'detail' post.id %}" data-toggle="modal" data-target="#portfolioItem3"><span class="fas fa-eye"></span></a>
+                            <a href="#"><span class="fas fa-link"></span></a>
+                        </div><!-- /.portfolio-item-info -->
+                    </div><!-- /.portfolio-item -->
+                </div>
+                {% endfor %}
+                <div col-md-4 col-xs-6>
+                    <a href="{% url 'project' %}" class="btn btn-outline-info mb-3">See More</a>
+                </div>
+            </div>
+        </div>
+    </section><!-- /.secton-portfolio -->
+
+    <!-- Blog Section -->
+		<div class="container" id="blog">
+			<div class="text-center my-5">
+				<h2 class="ttl">Latest Posts</h2>
+				<hr/>
+			</div>
+			
+			<div class="row">
+				<!-- line 1 -->
+                {% for post in posts|slice:'6' %}
+				<div class="col-lg-4 col-md-6 col-sm-12" id="effect">
+					<div class="card mb-5 shadow-sm">
+						<img src="{{ post.image.url }}" class="img-fluid"/>
+						<div class="card-body">
+							<div class="card-title">
+								<h3 class="text-blg">{{ post.title }}</h3>
+							</div>
+							<div class="card-text">
+								<p class="text-muted">{{ post.description|slice:':70' }}</p>
+							</div>
+							<a href="{% url 'blog_detail' post.id %}" class="btn btn-outline-primary float-right" id="button">Read More</a>
+						</div>
+					</div>
+				</div>
+                {% endfor %}	
+                <div col-md-4 col-xs-6>
+                    <a href="{% url 'blog' %}" class="btn btn-outline-info mb-3">See More</a>
+                </div>
+			</div>
+			
+		</div>
+		<!-- End of Blog Section -->
+ 
+    <section id="team">
+        <h1>Our Team</h1>
+        <div class="container">
+            <div class="carousel owl-carousel team">
+                {% for user in teams %}
+                    <div class="card">
+                        <div class="team-item">
+                            <img src="{{ user.image.url }}" alt="" class="img-fluid">
+                        <div class="item-data">
+                            <div class="name-pos">
+                                <h5>{{ user.name }}</h5>
+                                <p>{{ user.position }}</p>
+                            </div>
+                            <div class="social">
+                                <a href="{{ user.fb }}"><i class="fab fa-facebook-f"></i> </a>
+                                <a href="{{ user.tw}}"><i class="fab fa-twitter"></i></a>
+                                <a href="{{ user.ig }}"><i class="fab fa-instagram"></i></a>
+                                <a href="{{ user.inl }}"><i class="fab fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+<!--Contact section-->
+<section id="contact">
+    <h1>Contact Us</h1>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-4">Let Us Handle Your Project Professionaly</h2>
+                <p class="text-muted">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat optio officiis est dolorum laborum odit, 
+                    neque repellat similique possimus minima voluptates id doloribus temporibus ipsa iure provident corrupti? Asperiores, illum.</p>
+            </div>
+                <div id="form" class="col-md-6">
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <h3 class="alert alert-successs">{{ message }}</h3>
+                            {% else %}
+                            <h3 class="alert alert-error">{{ message }}</h3>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                    <form action="{% url 'contact' %}" class="contact-info" method="post">
+                        {% csrf_token %}
+                       <div class="form-group">
+                           <input type="text" class="form-control" placeholder="Your Name" name="name">
+                       </div>
+   
+                       <div class="form-group">
+                           <input type="email" class="form-control" placeholder="Your Email" name="email">
+                       </div>
+   
+                       <div class="form-group">
+                           <input type="phone" class="form-control" placeholder="Your Telephone No" name="number">
+                       </div>
+   
+                       <div class="form-group">
+                           <textarea cols="30" rows="4" class="form-control" placeholder="Your Message" name="message"></textarea>
+                       </div>
+                       <button class="btn btn-outline-primary float-right" type="submit">Send</button>
+                   </form><br><br>
+               </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
